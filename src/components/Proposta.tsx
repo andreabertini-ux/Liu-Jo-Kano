@@ -44,7 +44,7 @@ export default function Proposta() {
       {activeSlide === 0 && (
         <div className="slide active cover">
           <div className="cover-top">
-            <div className="cover-eyebrow">Arad · Proposta progettuale</div>
+            <div className="cover-eyebrow">Arad · Scope of Work</div>
             <div className="cover-title">
               Omnichannel
               <br />
@@ -83,9 +83,9 @@ export default function Proposta() {
             <div className="divider"></div>
             <div className="goal-box">
               <p>
-                Identificare una <strong style={{ fontWeight: 500 }}>lista prioritizzata</strong>,
+                Identificare una <strong style={{ fontWeight: 600 }}>lista prioritizzata</strong>,
                 dal punto di vista del cliente finale, delle iniziative di{' '}
-                <strong style={{ fontWeight: 500 }}>Omnichannel Excellence</strong> volte a elevare la
+                <strong style={{ fontWeight: 600 }}>Omnichannel Excellence</strong> volte a elevare la
                 Customer Experience in negozio, sfruttando le possibilità del digitale dove utili e
                 rilevanti.
               </p>
@@ -106,10 +106,10 @@ export default function Proposta() {
               }}
             >
               Il perimetro è volutamente focalizzato sull'
-              <strong style={{ fontWeight: 500, color: 'var(--color-text-primary)' }}>
+              <strong style={{ fontWeight: 600, color: 'var(--color-text-primary)' }}>
                 elevare l'esperienza in negozio
               </strong>{' '}
-              — non sull'omnichannel in senso ampio — in accordo con l'orientamento dello stakeholder
+              — non sull'omnichannel in senso stretto — in accordo con l'orientamento dello stakeholder
               principale. Il team Retail viene coinvolto fin dall'inizio in modalità partecipativa,
               leggera e non onerosa.
             </div>
@@ -133,9 +133,7 @@ export default function Proposta() {
                 <div>
                   <div className="step-title">Brainstorming AS IS + lista iniziative</div>
                   <div className="step-desc">
-                    Sessione congiunta ARAD · Elia · Retail per mappare lo stato attuale e generare
-                    la lista delle iniziative candidate. Modalità collaborativa, poco faticosa ma
-                    coinvolgente per tutti gli stakeholder.
+                    Sessione di lavoro congiunta tra ARAD, il team CRM/Omnichannel e Retail, volta a mappare lo stato attuale dell'esperienza in negozio e a costruire collaborativamente la lista delle iniziative candidate. Il formato è progettato per essere strutturato ma non oneroso, favorendo il contributo autentico di tutti gli stakeholder.
                   </div>
                 </div>
               </div>
@@ -144,9 +142,7 @@ export default function Proposta() {
                 <div>
                   <div className="step-title">Creazione del survey in formato Kano</div>
                   <div className="step-desc">
-                    Strutturazione del questionario secondo il modello Kano per identificare gli
-                    elementi imprescindibili (must-be), migliorativi (performance) e delizianti
-                    (attractive) dal punto di vista dei clienti finali.
+                    Strutturazione del questionario secondo il modello Kano, per distinguere le iniziative imprescindibili (must-be), quelle a impatto incrementale (performance) e quelle capaci di generare sorpresa positiva nel cliente (delighter). Il questionario viene condiviso con il team CRM/Omnichannel/Retail per validazione prima della somministrazione.
                   </div>
                 </div>
               </div>
@@ -155,18 +151,16 @@ export default function Proposta() {
                 <div>
                   <div className="step-title">Somministrazione del sondaggio</div>
                   <div className="step-desc">
-                    Raccolta delle risposte da clienti reali Liu Jo, da remoto o in persona (modalità
-                    da definire). Target: campione rappresentativo del profilo cliente brand.
+                    Raccolta delle risposte su un doppio campione: clienti Liu Jo esistenti e un panel esterno profilato sul target desiderato, es. giovani consumatrici con interesse per il fashion. Questo approccio consente di bilanciare la voce del cliente attuale con quella del cliente a cui il brand aspira, riducendo il rischio di bias di conferma. La modalità di somministrazione ai già clienti è da definire.
                   </div>
                 </div>
               </div>
               <div className="step">
                 <div className="step-num">4</div>
                 <div>
-                  <div className="step-title">Aggregazione risultati e lista prioritizzata</div>
+                  <div className="step-title">Aggregazione dei risultati e lista prioritizzata</div>
                   <div className="step-desc">
-                    Elaborazione delle risposte, costruzione del visual Kano e produzione della lista
-                    finale prioritizzata di iniziative — il deliverable principale del progetto.
+                    Elaborazione dei dati raccolti, costruzione del visual Kano e produzione della lista finale di iniziative prioritizzate. Le risposte dei due campioni vengono pesate per garantire che le evidenze riflettano sia i clienti fedeli attuali che le opportunità di espansione verso nuovi profili di cliente.
                   </div>
                 </div>
               </div>
@@ -181,7 +175,7 @@ export default function Proposta() {
             <div className="slide-header">
               <div className="slide-num">04 · Possibili follow-up</div>
               <div className="slide-title">
-                Opportunità <em>on-top</em>
+                Opportunità <em>a seguire</em>
               </div>
             </div>
             <div className="divider"></div>
@@ -206,8 +200,8 @@ export default function Proposta() {
               </div>
             </div>
             <div className="fu-note" style={{ marginTop: '16px' }}>
-              <strong>Nota:</strong> i follow-up rappresentano naturali filoni di upsell,
-              attivabili selettivamente a seconda delle priorità emerse dalla ricerca e dell'appetito
+              <strong>Nota:</strong> i follow-up rappresentano possibili approfondimenti naturali,
+              attivabili selettivamente a seconda delle priorità emerse dalla ricerca e dei desiderata
               del cliente. Ciascuno è indipendente e modulare.
             </div>
           </div>
@@ -224,42 +218,95 @@ export default function Proposta() {
               </div>
             </div>
             <div className="divider"></div>
+            <div className="timeline-visual" style={{ marginBottom: '32px' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: '140px repeat(7, 1fr)', gap: '4px', fontSize: '10px', color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.05em', paddingBottom: '8px', borderBottom: '1px solid var(--color-border-tertiary)' }}>
+                <div>Fase</div>
+                <div style={{ textAlign: 'center' }}>W1</div>
+                <div style={{ textAlign: 'center' }}>W2</div>
+                <div style={{ textAlign: 'center' }}>W3</div>
+                <div style={{ textAlign: 'center' }}>W4</div>
+                <div style={{ textAlign: 'center' }}>W5</div>
+                <div style={{ textAlign: 'center' }}>W6</div>
+                <div style={{ textAlign: 'center' }}>W7</div>
+              </div>
+
+              {/* 0 - Kickoff */}
+              <div style={{ display: 'grid', gridTemplateColumns: '140px repeat(7, 1fr)', gap: '4px', alignItems: 'center', padding: '12px 0', borderBottom: '0.5px solid var(--color-border-tertiary)' }}>
+                <div style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-primary)' }}>0 · Kickoff</div>
+                <div style={{ gridColumn: '2 / 3', background: 'var(--color-accent-gold)', height: '12px', borderRadius: '6px', width: '12px', justifySelf: 'center' }}></div>
+              </div>
+
+              {/* 1 - Brainstorming */}
+              <div style={{ display: 'grid', gridTemplateColumns: '140px repeat(7, 1fr)', gap: '4px', alignItems: 'center', padding: '12px 0', borderBottom: '0.5px solid var(--color-border-tertiary)' }}>
+                <div style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-primary)' }}>1 · Brainstorming ecc.</div>
+                <div style={{ gridColumn: '2 / 4', background: 'rgba(201, 169, 110, 0.8)', height: '20px', borderRadius: '4px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '10px', color: 'white', fontWeight: 600 }}>2 sett.</div>
+              </div>
+
+              {/* 2 - Survey */}
+              <div style={{ display: 'grid', gridTemplateColumns: '140px repeat(7, 1fr)', gap: '4px', alignItems: 'center', padding: '12px 0', borderBottom: '0.5px solid var(--color-border-tertiary)' }}>
+                <div style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-primary)' }}>2 · Survey ecc.</div>
+                <div style={{ gridColumn: '4 / 6', background: 'rgba(201, 169, 110, 0.6)', height: '20px', borderRadius: '4px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '10px', color: 'white', fontWeight: 600 }}>2 sett.</div>
+              </div>
+
+              {/* 3 - Field */}
+              <div style={{ display: 'grid', gridTemplateColumns: '140px repeat(7, 1fr)', gap: '4px', alignItems: 'center', padding: '12px 0', borderBottom: '0.5px solid var(--color-border-tertiary)' }}>
+                <div style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-primary)' }}>3 · Field ecc.</div>
+                <div style={{ gridColumn: '6 / 7', background: 'rgba(201, 169, 110, 0.4)', height: '20px', borderRadius: '4px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '10px', color: 'white', fontWeight: 600 }}>1 sett.</div>
+              </div>
+
+              {/* 4 - Analisi */}
+              <div style={{ display: 'grid', gridTemplateColumns: '140px repeat(7, 1fr)', gap: '4px', alignItems: 'center', padding: '12px 0' }}>
+                <div style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-primary)' }}>4 · Analisi ecc.</div>
+                <div style={{ gridColumn: '7 / 9', background: 'rgba(201, 169, 110, 0.2)', height: '20px', borderRadius: '4px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '10px', color: 'var(--color-text-primary)', fontWeight: 600 }}>2 sett.</div>
+              </div>
+            </div>
+
             <div className="timeline">
               <div className="tl-row">
-                <div className="tl-phase">Fase 1</div>
+                <div className="tl-phase">0 · Kickoff</div>
                 <div>
-                  <div className="tl-title">Brainstorming & setup</div>
-                  <div className="tl-dur">~1–2 settimane</div>
+                  <div className="tl-title">Avvio progetto</div>
+                  <div className="tl-dur">Inizio W1</div>
                   <div className="tl-items">
-                    Kick-off, mappatura AS IS, generazione lista iniziative, allineamento con Retail
+                    Allineamento iniziale, definizione obiettivi e modalità operative
                   </div>
                 </div>
               </div>
               <div className="tl-row">
-                <div className="tl-phase">Fase 2</div>
+                <div className="tl-phase">1 · Brainstorming</div>
+                <div>
+                  <div className="tl-title">Brainstorming & setup</div>
+                  <div className="tl-dur">2 settimane</div>
+                  <div className="tl-items">
+                    Mappatura AS IS, generazione lista iniziative, allineamento con Retail
+                  </div>
+                </div>
+              </div>
+              <div className="tl-row">
+                <div className="tl-phase">2 · Survey</div>
                 <div>
                   <div className="tl-title">Costruzione survey Kano</div>
-                  <div className="tl-dur">~1 settimana</div>
+                  <div className="tl-dur">2 settimane</div>
                   <div className="tl-items">
                     Strutturazione domande, revisione interna, approvazione Liu Jo
                   </div>
                 </div>
               </div>
               <div className="tl-row">
-                <div className="tl-phase">Fase 3</div>
+                <div className="tl-phase">3 · Field</div>
                 <div>
                   <div className="tl-title">Field — somministrazione</div>
-                  <div className="tl-dur">~2–3 settimane</div>
+                  <div className="tl-dur">1 settimana</div>
                   <div className="tl-items">
                     Raccolta risposte (remoto / in persona TBD), monitoraggio completamento campione
                   </div>
                 </div>
               </div>
               <div className="tl-row">
-                <div className="tl-phase">Fase 4</div>
+                <div className="tl-phase">4 · Analisi</div>
                 <div>
                   <div className="tl-title">Analisi & deliverable</div>
-                  <div className="tl-dur">~1–2 settimane</div>
+                  <div className="tl-dur">2 settimane</div>
                   <div className="tl-items">
                     Aggregazione dati, visual Kano, lista prioritizzata, presentazione finale
                   </div>
@@ -267,8 +314,9 @@ export default function Proposta() {
               </div>
             </div>
             <div className="tl-note">
-              <strong>Totale stimato:</strong> 5–8 settimane dalla firma. Da raffinare con il team
+              <strong>Totale stimato:</strong> 7-8 settimane dal kickoff. Da raffinare con il team
               dopo il kick-off. I follow-up (se attivati) si aggiungono in coda sequenzialmente.
+              La timeline non considera tempi di feedback prolungati.
             </div>
           </div>
         </div>
@@ -287,23 +335,19 @@ export default function Proposta() {
             <div className="faq-list">
               <FaqItem
                 question="Perché il modello Kano e non una semplice survey di priorità?"
-                answer="Il modello Kano permette di distinguere tra ciò che il cliente dà per scontato (must-be), ciò che apprezza se presente (performance) e ciò che lo sorprende positivamente (attractive). Una semplice survey di priorità non cattura questa dimensione qualitativa, fondamentale per allocare correttamente gli investimenti."
+                answer="Il modello Kano permette di distinguere tra ciò che il cliente dà per scontato (must-be), ciò che apprezza se presente (performance) e ciò che lo sorprende positivamente (delighter). Una semplice survey di priorità non cattura questa dimensione qualitativa, fondamentale per allocare correttamente gli investimenti."
               />
               <FaqItem
                 question="Come viene coinvolto il team Retail di Liu Jo?"
-                answer="Il Retail viene coinvolto nel brainstorming iniziale (fase 1) per contribuire alla lista delle iniziative candidate. Il coinvolgimento è progettato per essere leggero e non oneroso: partecipazione a una sessione strutturata, nessun lavoro autonomo aggiuntivo richiesto."
+                answer="Il Retail viene coinvolto nel brainstorming iniziale (fase 1) per contribuire alla lista delle iniziative candidate, e successivamente nelle fasi di validazione del survey e di condivisione dei risultati. Il coinvolgimento è progettato per essere leggero e non oneroso: partecipazione a sessioni strutturate, nessun lavoro autonomo aggiuntivo richiesto."
               />
               <FaqItem
                 question="Qual è il deliverable finale del progetto core?"
-                answer="Una lista prioritizzata di iniziative di Omnichannel Excellence, corredata da un visual Kano che mostra la distribuzione delle iniziative per categoria (must-be, performance, attractive). È il deliverable esattamente richiesto da Elia e allineato con l'AD."
+                answer="Una lista prioritizzata di iniziative di Omnichannel Excellence, corredata da un visual Kano che mostra la distribuzione delle iniziative per categoria (must-be, performance, delighter). È un output molto operativo e in linea con le richieste degli stakeholder."
               />
               <FaqItem
                 question="Il sondaggio viene somministrato in persona o da remoto?"
                 answer="La modalità è da definire insieme a Liu Jo (TBD). Entrambe le opzioni sono percorribili: da remoto tramite link digitale, oppure in persona in negozio tramite tablet o carta. La scelta impatta tempi e costi di field ma non la qualità del metodo."
-              />
-              <FaqItem
-                question="Perché si chiama &quot;Omnichannel Excellence&quot; e non &quot;Retail Excellence&quot;?"
-                answer="Il nome &quot;Omnichannel Excellence&quot; è stato scelto per evitare sovrapposizioni percepite con i team Retail interni, riducendo potenziali resistenze. Il contenuto rimane focalizzato sull'esperienza in negozio, in linea con le indicazioni dell'AD."
               />
             </div>
           </div>
@@ -324,39 +368,31 @@ export default function Proposta() {
               <div className="ns-row">
                 <div className="ns-num">1</div>
                 <div className="ns-text">
-                  <strong>Allineamento interno ARAD</strong> — Revisione e validazione di questo
-                  documento con il team. Raccolta di feedback e integrazioni prima della
-                  presentazione al cliente.
-                </div>
-              </div>
-              <div className="ns-row">
-                <div className="ns-num">2</div>
-                <div className="ns-text">
-                  <strong>Presentazione a Elia</strong> — Condivisione della proposta per
+                  <strong>Approvazione Scope of Work</strong> — Condivisione della proposta per
                   approvazione di approccio, scope e timeline. Definizione della modalità di
                   coinvolgimento Retail.
                 </div>
               </div>
               <div className="ns-row">
-                <div className="ns-num">3</div>
-                <div className="ns-text">
-                  <strong>Proposta economica</strong> — Redazione e invio dell'offerta formale con
-                  dettaglio di effort, tempistiche e costi. Inclusione opzionale dei follow-up come
-                  voci separate.
-                </div>
-              </div>
-              <div className="ns-row">
-                <div className="ns-num">4</div>
+                <div className="ns-num">2</div>
                 <div className="ns-text">
                   <strong>Kick-off del progetto</strong> — Avvio delle attività a seguito di
                   accettazione: pianificazione del brainstorming, setup degli strumenti e
                   definizione del panel di clienti target.
                 </div>
               </div>
-            </div>
-            <div className="ns-cta">
-              Nessuna decisione urgente richiesta al cliente in questa fase. Il prossimo step è la
-              validazione interna del documento.
+              <div className="ns-row">
+                <div className="ns-num">3</div>
+                <div className="ns-text">
+                  <strong>Sessione di brainstorming</strong> — Incontro congiunto con il team CRM/Omnichannel e Retail per mappare lo stato attuale e costruire la lista delle iniziative candidate.
+                </div>
+              </div>
+              <div className="ns-row">
+                <div className="ns-num">4</div>
+                <div className="ns-text">
+                  <strong>Co-creazione e validazione del questionario</strong> — Dopo il brainstorming, prevediamo uno step congiunto per strutturare (ARAD), testare e approvare (Liu Jo) definitivamente le domande esatte prima di somministrarle ai clienti.
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -364,14 +400,23 @@ export default function Proposta() {
 
       {activeSlide === 7 && (
         <div className="slide active thankyou">
-          <div className="ty-line"></div>
-          <div className="ty-title">Grazie</div>
-          <div className="ty-sub">
-            Siamo pronti a portare la voce del cliente al centro delle decisioni strategiche di Liu
-            Jo.
+          <div className="ty-left">
+            <div className="ty-line"></div>
+            <div className="ty-title">Grazie</div>
+            <div className="ty-sub">
+              Siamo pronti a portare la voce del cliente al centro delle decisioni strategiche di Liu
+              Jo.
+            </div>
+            <div className="ty-line"></div>
+            <div className="ty-contact">Arad · 2026</div>
           </div>
-          <div className="ty-line"></div>
-          <div className="ty-contact">Arad · 2026</div>
+          <div className="ty-divider"></div>
+          <div className="ty-right">
+            <div className="ty-contact-decor"></div>
+            <div className="ty-contact-name">Andrea Bertini</div>
+            <div className="ty-contact-role">Product & Service Design Lead | Omnichannel Experience Strategist</div>
+            <div className="ty-contact-email">andrea.bertini@arad.digital</div>
+          </div>
         </div>
       )}
     </div>
