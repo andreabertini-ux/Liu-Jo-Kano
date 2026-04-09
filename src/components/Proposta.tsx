@@ -13,7 +13,7 @@ function FaqItem({ question, answer }: { question: string; answer: string }) {
   );
 }
 
-export default function Proposta() {
+export default function Proposta({ isExporting }: { isExporting?: boolean }) {
   const [activeSlide, setActiveSlide] = useState(0);
 
   const tabs = [
@@ -29,20 +29,22 @@ export default function Proposta() {
 
   return (
     <div className="top-pane active">
-      <div className="deck-tab-bar">
-        {tabs.map((tab, idx) => (
-          <button
-            key={idx}
-            className={`deck-tab-btn ${activeSlide === idx ? 'active' : ''}`}
-            onClick={() => setActiveSlide(idx)}
-          >
-            {tab}
-          </button>
-        ))}
-      </div>
+      {!isExporting && (
+        <div className="deck-tab-bar">
+          {tabs.map((tab, idx) => (
+            <button
+              key={idx}
+              className={`deck-tab-btn ${activeSlide === idx ? 'active' : ''}`}
+              onClick={() => setActiveSlide(idx)}
+            >
+              {tab}
+            </button>
+          ))}
+        </div>
+      )}
 
-      {activeSlide === 0 && (
-        <div className="slide active cover">
+      {(isExporting || activeSlide === 0) && (
+        <div className={`slide ${isExporting || activeSlide === 0 ? 'active' : ''} cover`}>
           <div className="cover-top">
             <div className="cover-eyebrow">Arad · Scope of Work</div>
             <div className="cover-title">
@@ -71,8 +73,8 @@ export default function Proposta() {
         </div>
       )}
 
-      {activeSlide === 1 && (
-        <div className="slide active">
+      {(isExporting || activeSlide === 1) && (
+        <div className={`slide ${isExporting || activeSlide === 1 ? 'active' : ''}`}>
           <div className="slide-inner">
             <div className="slide-header">
               <div className="slide-num">02 · Obiettivi del progetto</div>
@@ -117,8 +119,8 @@ export default function Proposta() {
         </div>
       )}
 
-      {activeSlide === 2 && (
-        <div className="slide active">
+      {(isExporting || activeSlide === 2) && (
+        <div className={`slide ${isExporting || activeSlide === 2 ? 'active' : ''}`}>
           <div className="slide-inner">
             <div className="slide-header">
               <div className="slide-num">03 · Sequenza di attività</div>
@@ -169,8 +171,8 @@ export default function Proposta() {
         </div>
       )}
 
-      {activeSlide === 3 && (
-        <div className="slide active">
+      {(isExporting || activeSlide === 3) && (
+        <div className={`slide ${isExporting || activeSlide === 3 ? 'active' : ''}`}>
           <div className="slide-inner">
             <div className="slide-header">
               <div className="slide-num">04 · Possibili follow-up</div>
@@ -208,8 +210,8 @@ export default function Proposta() {
         </div>
       )}
 
-      {activeSlide === 4 && (
-        <div className="slide active">
+      {(isExporting || activeSlide === 4) && (
+        <div className={`slide ${isExporting || activeSlide === 4 ? 'active' : ''}`}>
           <div className="slide-inner">
             <div className="slide-header">
               <div className="slide-num">05 · Timeline</div>
@@ -322,8 +324,8 @@ export default function Proposta() {
         </div>
       )}
 
-      {activeSlide === 5 && (
-        <div className="slide active">
+      {(isExporting || activeSlide === 5) && (
+        <div className={`slide ${isExporting || activeSlide === 5 ? 'active' : ''}`}>
           <div className="slide-inner">
             <div className="slide-header">
               <div className="slide-num">06 · Domande frequenti</div>
@@ -354,8 +356,8 @@ export default function Proposta() {
         </div>
       )}
 
-      {activeSlide === 6 && (
-        <div className="slide active">
+      {(isExporting || activeSlide === 6) && (
+        <div className={`slide ${isExporting || activeSlide === 6 ? 'active' : ''}`}>
           <div className="slide-inner">
             <div className="slide-header">
               <div className="slide-num">07 · Prossimi passi</div>
@@ -398,8 +400,8 @@ export default function Proposta() {
         </div>
       )}
 
-      {activeSlide === 7 && (
-        <div className="slide active thankyou">
+      {(isExporting || activeSlide === 7) && (
+        <div className={`slide ${isExporting || activeSlide === 7 ? 'active' : ''} thankyou`}>
           <div className="ty-left">
             <div className="ty-line"></div>
             <div className="ty-title">Grazie</div>

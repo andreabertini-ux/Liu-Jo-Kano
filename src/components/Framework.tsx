@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'motion/react';
 
-export default function Framework() {
+export default function Framework({ isExporting }: { isExporting?: boolean }) {
   const [activeSection, setActiveSection] = useState('overview');
   const [activeCategory, setActiveCategory] = useState('must-be');
 
@@ -33,41 +33,43 @@ export default function Framework() {
             base all'impatto sulla soddisfazione del cliente.
           </p>
         </div>
-        <div className="knav">
-          <button
-            className={activeSection === 'overview' ? 'active' : ''}
-            onClick={() => showSection('overview')}
-          >
-            Panoramica
-          </button>
-          <button
-            className={activeSection === 'categories' ? 'active' : ''}
-            onClick={() => showSection('categories')}
-          >
-            Le 5 Categorie
-          </button>
-          <button
-            className={activeSection === 'survey' ? 'active' : ''}
-            onClick={() => showSection('survey')}
-          >
-            Come funziona
-          </button>
-          <button
-            className={activeSection === 'proscons' ? 'active' : ''}
-            onClick={() => showSection('proscons')}
-          >
-            Pro e Contro
-          </button>
-          <button
-            className={activeSection === 'tips' ? 'active' : ''}
-            onClick={() => showSection('tips')}
-          >
-            Best Practice
-          </button>
-        </div>
+        {!isExporting && (
+          <div className="knav">
+            <button
+              className={activeSection === 'overview' ? 'active' : ''}
+              onClick={() => showSection('overview')}
+            >
+              Panoramica
+            </button>
+            <button
+              className={activeSection === 'categories' ? 'active' : ''}
+              onClick={() => showSection('categories')}
+            >
+              Le 5 Categorie
+            </button>
+            <button
+              className={activeSection === 'survey' ? 'active' : ''}
+              onClick={() => showSection('survey')}
+            >
+              Come funziona
+            </button>
+            <button
+              className={activeSection === 'proscons' ? 'active' : ''}
+              onClick={() => showSection('proscons')}
+            >
+              Pro e Contro
+            </button>
+            <button
+              className={activeSection === 'tips' ? 'active' : ''}
+              onClick={() => showSection('tips')}
+            >
+              Best Practice
+            </button>
+          </div>
+        )}
 
-        {activeSection === 'overview' && (
-          <div className="ksection active">
+        {(isExporting || activeSection === 'overview') && (
+          <div className={`ksection ${isExporting || activeSection === 'overview' ? 'active' : ''}`}>
             <div className="kano-chart-wrap">
               <svg width="100%" viewBox="0 0 640 380" xmlns="http://www.w3.org/2000/svg">
                 <defs>
@@ -376,9 +378,9 @@ export default function Framework() {
           </div>
         )}
 
-        {activeSection === 'categories' && (
-          <div className="ksection active">
-            <div className="cat-tabs">
+        {(isExporting || activeSection === 'categories') && (
+          <div className={`ksection ${isExporting || activeSection === 'categories' ? 'active' : ''}`}>
+            <div className="cat-tabs" style={{ display: isExporting ? 'none' : 'flex' }}>
               {Object.keys(catColors).map((cat) => (
                 <button
                   key={cat}
@@ -399,8 +401,8 @@ export default function Framework() {
               ))}
             </div>
 
-            {activeCategory === 'must-be' && (
-              <div className="cat-panel active">
+            {(isExporting || activeCategory === 'must-be') && (
+              <div className={`cat-panel ${isExporting || activeCategory === 'must-be' ? 'active' : ''}`}>
                 <div className="cat-info">
                   <h3>Must-be Features</h3>
                   <div className="aka">Anche dette: Basic features</div>
@@ -488,8 +490,8 @@ export default function Framework() {
               </div>
             )}
 
-            {activeCategory === 'performance' && (
-              <div className="cat-panel active">
+            {(isExporting || activeCategory === 'performance') && (
+              <div className={`cat-panel ${isExporting || activeCategory === 'performance' ? 'active' : ''}`}>
                 <div className="cat-info">
                   <h3>Performance Features</h3>
                   <div className="aka">Anche dette: One-dimensional features</div>
@@ -577,8 +579,8 @@ export default function Framework() {
               </div>
             )}
 
-            {activeCategory === 'delighter' && (
-              <div className="cat-panel active">
+            {(isExporting || activeCategory === 'delighter') && (
+              <div className={`cat-panel ${isExporting || activeCategory === 'delighter' ? 'active' : ''}`}>
                 <div className="cat-info">
                   <h3>Delighter Features</h3>
                   <div className="aka">Anche dette: Attractive features</div>
@@ -669,8 +671,8 @@ export default function Framework() {
               </div>
             )}
 
-            {activeCategory === 'indifferent' && (
-              <div className="cat-panel active">
+            {(isExporting || activeCategory === 'indifferent') && (
+              <div className={`cat-panel ${isExporting || activeCategory === 'indifferent' ? 'active' : ''}`}>
                 <div className="cat-info">
                   <h3>Indifferent Features</h3>
                   <div className="aka">Nessun impatto sulla soddisfazione</div>
@@ -758,8 +760,8 @@ export default function Framework() {
               </div>
             )}
 
-            {activeCategory === 'dissatisfying' && (
-              <div className="cat-panel active">
+            {(isExporting || activeCategory === 'dissatisfying') && (
+              <div className={`cat-panel ${isExporting || activeCategory === 'dissatisfying' ? 'active' : ''}`}>
                 <div className="cat-info">
                   <h3>Dissatisfying Features</h3>
                   <div className="aka">Anche dette: Reverse features</div>
@@ -849,8 +851,8 @@ export default function Framework() {
           </div>
         )}
 
-        {activeSection === 'survey' && (
-          <div className="ksection active">
+        {(isExporting || activeSection === 'survey') && (
+          <div className={`ksection ${isExporting || activeSection === 'survey' ? 'active' : ''}`}>
             <p className="section-title">Come raccogliere i dati</p>
             <p className="section-sub">
               Il modello usa un questionario standardizzato con domande funzionali e disfunzionali
@@ -1185,8 +1187,8 @@ export default function Framework() {
           </div>
         )}
 
-        {activeSection === 'proscons' && (
-          <div className="ksection active">
+        {(isExporting || activeSection === 'proscons') && (
+          <div className={`ksection ${isExporting || activeSection === 'proscons' ? 'active' : ''}`}>
             <div className="pc-grid">
               <div className="pc-card" style={{ borderColor: 'rgba(16, 185, 129, 0.4)' }}>
                 <h3 style={{ color: '#10b981' }}>Vantaggi</h3>
@@ -1203,7 +1205,7 @@ export default function Framework() {
                 <ul>
                   <li data-icon="✗">
                     <span className="group relative cursor-help inline-block">
-                      <span className="border-b border-dotted border-gray-500">Non considera costo e fattibilità</span>
+                      <span className="border-b border-dotted" style={{ borderColor: 'var(--color-text-tertiary)' }}>Non considera costo e fattibilità</span>
                       <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 p-2 bg-[#0a1628] border border-[#c9a96e]/40 rounded text-[11px] leading-tight text-white opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-10 text-center shadow-lg pointer-events-none">
                         Integra il modello Kano con una matrice Costo/Valore o stime di effort.
                       </div>
@@ -1211,7 +1213,7 @@ export default function Framework() {
                   </li>
                   <li data-icon="✗">
                     <span className="group relative cursor-help inline-block">
-                      <span className="border-b border-dotted border-gray-500">Non spiega il "perché" di una priorità</span>
+                      <span className="border-b border-dotted" style={{ borderColor: 'var(--color-text-tertiary)' }}>Non spiega il "perché" di una priorità</span>
                       <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 p-2 bg-[#0a1628] border border-[#c9a96e]/40 rounded text-[11px] leading-tight text-white opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-10 text-center shadow-lg pointer-events-none">
                         Abbina il questionario a interviste qualitative per comprendere le motivazioni profonde.
                       </div>
@@ -1219,7 +1221,7 @@ export default function Framework() {
                   </li>
                   <li data-icon="✗">
                     <span className="group relative cursor-help inline-block">
-                      <span className="border-b border-dotted border-gray-500">Difficile applicare con clienti eterogenei</span>
+                      <span className="border-b border-dotted" style={{ borderColor: 'var(--color-text-tertiary)' }}>Difficile applicare con clienti eterogenei</span>
                       <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 p-2 bg-[#0a1628] border border-[#c9a96e]/40 rounded text-[11px] leading-tight text-white opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-10 text-center shadow-lg pointer-events-none">
                         Segmenta gli utenti prima dell'analisi (es. per persona o mercato) e crea grafici separati.
                       </div>
@@ -1227,7 +1229,7 @@ export default function Framework() {
                   </li>
                   <li data-icon="✗">
                     <span className="group relative cursor-help inline-block">
-                      <span className="border-b border-dotted border-gray-500">Scope limitato: solo prospettiva cliente</span>
+                      <span className="border-b border-dotted" style={{ borderColor: 'var(--color-text-tertiary)' }}>Scope limitato: solo prospettiva cliente</span>
                       <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 p-2 bg-[#0a1628] border border-[#c9a96e]/40 rounded text-[11px] leading-tight text-white opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-10 text-center shadow-lg pointer-events-none">
                         Affianca Kano ad analisi di business (es. ROI, allineamento strategico) per una visione olistica.
                       </div>
@@ -1235,7 +1237,7 @@ export default function Framework() {
                   </li>
                   <li data-icon="✗">
                     <span className="group relative cursor-help inline-block">
-                      <span className="border-b border-dotted border-gray-500">La timeline non considera tempi di feedback prolungati</span>
+                      <span className="border-b border-dotted" style={{ borderColor: 'var(--color-text-tertiary)' }}>La timeline non considera tempi di feedback prolungati</span>
                       <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 p-2 bg-[#0a1628] border border-[#c9a96e]/40 rounded text-[11px] leading-tight text-white opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-10 text-center shadow-lg pointer-events-none">
                         Pianifica buffer di tempo per la raccolta dati e usa solleciti automatizzati per velocizzare le risposte.
                       </div>
@@ -1262,8 +1264,8 @@ export default function Framework() {
           </div>
         )}
 
-        {activeSection === 'tips' && (
-          <div className="ksection active">
+        {(isExporting || activeSection === 'tips') && (
+          <div className={`ksection ${isExporting || activeSection === 'tips' ? 'active' : ''}`}>
             <p className="section-title">Best Practice per l'analisi Kano</p>
             <p className="section-sub">Consigli per usare il modello in modo efficace</p>
             <div className="tips-list">

@@ -4,12 +4,85 @@
  */
 
 import { useState } from 'react';
+import html2canvas from 'html2canvas-pro';
+import { jsPDF } from 'jspdf';
 import Proposta from './components/Proposta';
 import Framework from './components/Framework';
 import Chatbot from './components/Chatbot';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState('proposta');
+  const [isExporting, setIsExporting] = useState(false);
+
+  const exportToPDF = async () => {
+    setIsExporting(true);
+    
+    // Save current scroll position
+    const originalScrollY = window.scrollY;
+    window.scrollTo(0, 0);
+    
+    // Wait for React to re-render with all sections visible
+    setTimeout(async () => {
+      const element = document.getElementById('pdf-content');
+      if (!element) {
+        window.scrollTo(0, originalScrollY);
+        setIsExporting(false);
+        return;
+      }
+
+      try {
+        const pages = Array.from(element.querySelectorAll('.slide, .ksection')) as HTMLElement[];
+        
+        if (pages.length === 0) {
+          setIsExporting(false);
+          return;
+        }
+
+        let pdf: jsPDF | null = null;
+
+        for (let i = 0; i < pages.length; i++) {
+          const pageEl = pages[i];
+          const width = pageEl.scrollWidth || 1200;
+          const height = pageEl.scrollHeight || 800;
+
+          const canvas = await html2canvas(pageEl, {
+            scale: 2,
+            useCORS: true,
+            backgroundColor: '#0a1628', // var(--color-background-primary)
+            width: width,
+            height: height,
+            windowWidth: 1200,
+            scrollY: 0,
+            scrollX: 0
+          });
+          
+          const imgData = canvas.toDataURL('image/jpeg', 1.0);
+          
+          if (!pdf) {
+            pdf = new jsPDF({
+              orientation: width > height ? 'landscape' : 'portrait',
+              unit: 'px',
+              format: [width, height]
+            });
+          } else {
+            pdf.addPage([width, height], width > height ? 'landscape' : 'portrait');
+            pdf.setPage(i + 1);
+          }
+          
+          pdf.addImage(imgData, 'JPEG', 0, 0, width, height);
+        }
+        
+        if (pdf) {
+          pdf.save(`Arad_Project.pdf`);
+        }
+      } catch (error) {
+        console.error('Error exporting to PDF:', error);
+      } finally {
+        window.scrollTo(0, originalScrollY);
+        setIsExporting(false);
+      }
+    }, 500);
+  };
 
   return (
     <>
@@ -37,10 +110,37 @@ export default function App() {
         >
           Framework
         </button>
+        <div style={{ flex: 1 }}></div>
+        <button
+          onClick={exportToPDF}
+          disabled={isExporting}
+          style={{
+            marginRight: '24px',
+            padding: '8px 16px',
+            background: 'var(--color-accent-gold)',
+            color: '#000',
+            border: 'none',
+            borderRadius: '4px',
+            fontSize: '12px',
+            fontWeight: 600,
+            cursor: isExporting ? 'not-allowed' : 'pointer',
+            opacity: isExporting ? 0.7 : 1,
+            display: 'flex',
+            alignItems: 'center',
+            gap: '8px',
+            fontFamily: 'var(--font-sans)',
+            textTransform: 'uppercase',
+            letterSpacing: '0.05em'
+          }}
+        >
+          {isExporting ? 'Esportazione...' : 'Esporta PDF'}
+        </button>
       </div>
 
-      {activeTab === 'proposta' && <Proposta />}
-      {activeTab === 'framework' && <Framework />}
+      <div id="pdf-content" className={isExporting ? 'export-mode' : ''}>
+        {(isExporting || activeTab === 'proposta') && <Proposta isExporting={isExporting} />}
+        {(isExporting || activeTab === 'framework') && <Framework isExporting={isExporting} />}
+      </div>
       
       <Chatbot />
     </>

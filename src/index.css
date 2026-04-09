@@ -167,6 +167,21 @@ svg text { font-family: var(--font-sans); }
 .ts { font-size: 12px; fill: var(--color-text-secondary); }
 .th { font-size: 14px; font-weight: 600; fill: var(--color-text-primary); letter-spacing: 0.05em; text-transform: uppercase; }
 
+/* ── EXPORT MODE ── */
+.export-mode { padding: 0; background: var(--color-background-primary); width: 1200px; max-width: none; margin: 0 auto; overflow: visible; }
+.export-mode .slide { display: flex !important; flex-direction: column !important; margin-bottom: 0; border-bottom: none; padding: 40px; min-height: 800px; }
+.export-mode .slide:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 40px; }
+.export-mode .deck-tab-bar { display: none !important; }
+
+.export-mode .faq-answer { display: block !important; }
+.export-mode .faq-arrow { transform: rotate(180deg); }
+
+.export-mode .ksection { display: block !important; margin-bottom: 0; border-bottom: none; padding: 40px; min-height: 800px; }
+.export-mode .ksection:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 40px; }
+.export-mode .knav { display: none !important; }
+.export-mode .cat-panel { display: grid !important; margin-bottom: 40px; }
+.export-mode .cat-tabs { display: none !important; }
+
 @media (max-width: 540px) {
   .followup-grid, .def-grid, .survey-grid, .pc-grid, .cat-panel.active { grid-template-columns: 1fr; }
   .cover-title { font-size: 32px; }
