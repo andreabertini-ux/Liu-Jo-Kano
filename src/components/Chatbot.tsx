@@ -106,12 +106,21 @@ REGOLE FONDAMENTALI:
       };
 
       setMessages((prev) => [...prev, modelMessage]);
-    } catch (error) {
+    } catch (error: any) {
       console.error('Error generating response:', error);
+      
+      let errorText = 'Si è verificato un errore di connessione. Riprova più tardi.';
+      
+      if (error?.message?.includes('API key not valid') || error?.status === 400 || error?.status === 401 || error?.status === 403) {
+        errorText = 'Errore di autenticazione API. Assicurati di aver configurato correttamente la variabile d\'ambiente GEMINI_API_KEY su Netlify e di aver riavviato la build.';
+      } else if (!process.env.GEMINI_API_KEY || process.env.GEMINI_API_KEY === 'dummy-key') {
+        errorText = 'Chiave API mancante. Configura la variabile d\'ambiente GEMINI_API_KEY su Netlify e fai una nuova build.';
+      }
+
       const errorMessage: Message = {
         id: (Date.now() + 1).toString(),
         role: 'model',
-        text: 'Si è verificato un errore di connessione. Riprova più tardi.',
+        text: errorText,
       };
       setMessages((prev) => [...prev, errorMessage]);
     } finally {
