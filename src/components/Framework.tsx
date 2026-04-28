@@ -413,7 +413,7 @@ export default function Framework({ isExporting }: { isExporting?: boolean }) {
                   </p>
                   <div className="example-box" style={{ borderColor: '#ef4444' }}>
                     <strong>Esempio hotel:</strong> Acqua calda. Un hotel a 5 stelle senza acqua
-                    calda sarebbe un disastro — indipendentemente da qualsiasi altro lusso offra.
+                    calda sarebbe un disastro - indipendentemente da qualsiasi altro lusso offra.
                   </div>
                 </div>
                 <div className="cat-chart">
@@ -1288,7 +1288,7 @@ export default function Framework({ isExporting }: { isExporting?: boolean }) {
                 <div className="tip-num">3</div>
                 <p>
                   Non ignorare automaticamente le funzionalità "indifferenti" se semplificano il
-                  lavoro del team o degli sviluppatori — hanno comunque valore interno.
+                  lavoro del team o degli sviluppatori - hanno comunque valore interno.
                 </p>
               </div>
               <div className="tip-item">
